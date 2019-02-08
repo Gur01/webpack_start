@@ -2,7 +2,7 @@ import './scss/main.scss';
 
 // import { hello } from './js/index.js';
 // import { goodbye } from './js/index.js';
-import greeting from './js/index.js'
+import greeting from '@/src/index.js'
 
 // hello('hello')
 // goodbye('goodbye')
