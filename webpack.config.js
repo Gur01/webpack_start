@@ -9,10 +9,12 @@ module.exports = (env, argv) => {
     entry: {
       main: './src/main.js'
     },
+
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, 'dist')
     },
+
     module: {
       rules: [
         {
@@ -82,6 +84,7 @@ module.exports = (env, argv) => {
         }
       ]
     },
+
     plugins: [
       new HtmlWebpackPlugin({
         template: "./src/index.pug"
@@ -90,9 +93,19 @@ module.exports = (env, argv) => {
         filename: 'style.css'
       })
     ],
+
     devServer: {
       overlay: true
     },
-    devtool: devMode ? 'eval-source-map' : ''
+
+    devtool: devMode ? 'eval-source-map' : '',
+
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname),
+        'src': path.resolve(__dirname, 'src'),
+        'dist': path.resolve(__dirname, 'dist'),
+      }
+    }
   }
 }
