@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
 
 module.exports = (env, argv) => {
   const devMode = argv.mode !== 'production';
@@ -17,6 +18,7 @@ module.exports = (env, argv) => {
 
     module: {
       rules: [
+        //js
         {
           test: /\.m?js$/,
           exclude: /(node_modules|bower_components)/,
@@ -27,6 +29,7 @@ module.exports = (env, argv) => {
             }
           }
         },
+        //pug template engine
         {
           test: /\.pug$/,
           use: {
@@ -36,6 +39,7 @@ module.exports = (env, argv) => {
             }
           }
         },
+        //sass, scss
         {
           test: /\.(sa|sc|c)ss$/,
           use: [
@@ -46,6 +50,7 @@ module.exports = (env, argv) => {
             'sass-loader'
           ],
         },
+        //images
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           use: [
@@ -56,31 +61,58 @@ module.exports = (env, argv) => {
                 outputPath: 'images',
               }
             },
-            {
-              loader: 'image-webpack-loader',
-              options: devMode ? {} : {
-                mozjpeg: {
-                  progressive: true,
-                  quality: 65
-                },
-                // optipng.enabled: false will disable optipng
-                optipng: {
-                  enabled: false,
-                },
-                pngquant: {
-                  quality: '65-90',
-                  speed: 4
-                },
-                gifsicle: {
-                  interlaced: false,
-                },
-                // the webp option will enable WEBP
-                // webp: {
-                //   quality: 75
-                // }
-              }
-            },
+            //uncomment for auto image optimization
+            // {
+            //   loader: 'image-webpack-loader',
+            //   options: devMode ? {} : {
+            //     mozjpeg: {
+            //       progressive: true,
+            //       quality: 65
+            //     },
+            //     // optipng.enabled: false will disable optipng
+            //     optipng: {
+            //       enabled: false,
+            //     },
+            //     pngquant: {
+            //       quality: '65-90',
+            //       speed: 4
+            //     },
+            //     gifsicle: {
+            //       interlaced: false,
+            //     },
+            //     // the webp option will enable WEBP
+            //     // webp: {
+            //     //   quality: 75
+            //     // }
+            //   }
+            // },
           ],
+        },
+        //fonts woff
+        {
+          test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          use: [
+            {
+              loader: 'url-loader?limit=10000&mimetype=application/font-woff',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'fonts',
+              }
+            }
+          ]
+        },
+        //fonts ttf|eot|otf|svg
+        {
+          test: /\.(ttf|eot|otf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: './fonts',
+              }
+            }
+          ]
         }
       ]
     },
@@ -91,7 +123,12 @@ module.exports = (env, argv) => {
       }),
       new MiniCssExtractPlugin({
         filename: 'style.css'
-      })
+      }),
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      }),
     ],
 
     devServer: {

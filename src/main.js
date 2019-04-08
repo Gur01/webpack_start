@@ -1,15 +1,9 @@
 import './scss/main.scss';
+import 'bootstrap';
+import 'owl.carousel';
+import './js/index.js';
 
-// // import { hello } from './js/index.js';
-// // import { goodbye } from './js/index.js';
-// import greeting from '@/src/index.js'
+//document ready
+$(function() {
 
-// // hello('hello')
-// // goodbye('goodbye')
-// greeting.goodbye('goodbye');
-// // console.log(greeting.concat);
-// const name = { name: 'john' }
-// const age = { age: 25 }
-// const concat = { ...name, ...age };
-// console.log(concat);
-
+});
