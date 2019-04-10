@@ -12,6 +12,7 @@ npm run build
 - sass compiler
 - pug compiler
 - image loader
+- sourcemap in dev mode
 
 ## dependencies
 - bootstrap
