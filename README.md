@@ -23,3 +23,4 @@ npm run build
 ## todo
 - [ ] add multipage
 - [ ] add linter
+- [ ] add uglify js css on production
