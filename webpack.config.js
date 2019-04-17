@@ -132,7 +132,8 @@ module.exports = (env, argv) => {
     ],
 
     devServer: {
-      overlay: true
+      overlay: true,
+      open: true
     },
 
     devtool: devMode ? 'eval-source-map' : '',
