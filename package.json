@@ -31,9 +31,10 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
-    "owl.carousel": "^2.3.4"
+    "owl.carousel": "^2.3.4",
+    "popper.js": "^1.15.0"
   }
 }
