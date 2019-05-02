@@ -104,6 +104,7 @@ module.exports = (env, argv) => {
         //fonts ttf|eot|otf|svg
         {
           test: /\.(ttf|eot|otf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          exclude: [/images/],
           use: [
             {
               loader: 'file-loader',
