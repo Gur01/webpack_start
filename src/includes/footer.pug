@@ -1,1 +1,12 @@
-h1 footer
+.map#contacts
+  img(src=require('../images/map.jpg'), alt="")
+  .address-card
+    p г. Москва, ул.Кржижановского,
+    p дом 24/35, корпус 4
+    p (499) 643-56-81
+.footer 
+  .container
+    .row
+      p ООО ЧОП ПРАЙД © 
+        span#year
+      script (function(){const date = new Date();document.getElementById('year').innerHTML = date.getFullYear()})()

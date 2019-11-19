@@ -1,0 +1,23 @@
+.contact-form {
+  background: url('../images/cameras2.jpg') no-repeat center;
+  background-size: cover;
+  height: 400px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    color: #fffefe;
+    font-size: 24px;
+    text-align: center;
+  }
+  .button {
+    padding: 16px 40px;
+    border: 1px solid #fffefe;
+    color: #fffefe;
+    border-radius: 6px;
+    margin-top: 43px;
+    cursor: pointer;
+  }
+}

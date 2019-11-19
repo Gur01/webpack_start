@@ -1,0 +1,179 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-transform: uppercase;
+  overflow: hidden;
+  .header-top {
+    background-color: #fff;
+    padding: 10px 0;
+    .header-top--logo {
+      color: #2f3542;
+      position: relative;
+      .header-top--logo-text {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        h1 {
+          font-size: 48px;
+        }
+        h2 {
+          font-size: 18px;
+        }
+
+      }
+  
+    }
+
+    .header-top--phone {
+      color: #0d0d0d;
+      font-size: 32px;
+      position: relative;
+      text-align: right;
+      &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        background: url('../images/phone.png') center / cover;
+        width: 30px;
+        height: 30px;
+        left: -35px;
+        top: 10px;
+      }
+    }
+  }
+
+  .header-menu {
+    background-color: #44576b;
+    line-height: 2;
+    ul {
+      text-align: right;
+      li {
+        color: #dfe1e4;
+        display: inline-block;
+        margin-left: 20px;
+        margin-right: 20px;
+        a {
+          color: #ffffff;
+          text-decoration: none;
+          line-height: 4;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  // .header-image {
+  //   background: url('../images/cameras.jpg') center / cover;
+  //   flex-grow: 1;
+  //   .header-services {
+  //     margin-top: 30%;
+  //     margin-bottom: 45px;
+
+  //   }
+  //   ul {
+  //     display: block;
+  //     li {
+  //       display: inline-block;
+  //       margin-left: 45px;
+  //       color: #fff;
+  //       font-size: 18px;
+  //       &:first-child a:before {
+  //         width: 20px;
+  //         height: 20px;
+  //         background-color: #fff;
+  //         content: '';
+  //         display: inline-block;
+  //         position: absolute;
+  //         top: 2px;
+  //         left: -30px;
+  //       }
+  //       &:last-child a:before {
+  //         width: 20px;
+  //         height: 20px;
+  //         border: 1px solid #fff;
+  //         content: '';
+  //         display: inline-block;
+  //         position: absolute;
+  //         top: 2px;
+  //         left: -30px;
+  //       }
+  //       a {
+  //         color: #ffffff;
+  //         text-decoration: none;
+  //         position: relative;
+  //         &:hover {
+  //           text-decoration: underline;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  .header-line {
+    background-color: rgba(52, 73, 94, .6);
+    margin-bottom: 500px;
+    position: relative;
+    z-index: 1000;
+    h2 {
+      line-height: 6;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+
+  // slider
+.carousel {
+  flex-grow: 1;
+  .controls-wrapper {
+    top: 65%;
+    height: 100%;
+    position: relative;
+    bottom: 0;
+  }
+  .carousel-indicators {
+    margin: 0;
+    position: relative;
+    margin-left: 42px;
+    display: block;
+    margin-bottom: 30px;
+    li {
+      width: auto;
+      height: auto;
+      text-indent: 0;
+      background-color: transparent;
+      opacity: 1;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 400;
+      position: relative;
+      margin-right: 50px;
+      display: inline-block;
+      &.active {
+        opacity: 1;
+        &:before {
+          background-color: #fff;
+        }
+      }
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border: 1px solid #fff;
+        top: 3px;
+        left: -30px;
+      }
+    }
+  }
+  .carousel-item {
+    height: 100%;
+  }
+  .carousel-inner {
+    height: 100%;
+    position: absolute;
+  }
+}
+}

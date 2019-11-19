@@ -1,6 +1,6 @@
 //import all main styles
 @import '~bootstrap/scss/bootstrap.scss';
-
+@import "~toastr/toastr.scss";
 $fa-font-path: "~font-awesome/fonts"; 
 @import "~font-awesome/scss/font-awesome";
 @import "./reset.scss";
@@ -12,4 +12,6 @@ $fa-font-path: "~font-awesome/fonts";
 @import "./animations.scss";
 @import './common.scss';
 @import './header.scss';
+@import './content.scss';
+@import './contact-form.scss';
 @import './footer.scss';

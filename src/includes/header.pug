@@ -1,7 +1,41 @@
-include header.scss
-h1 header
-.container
-  .row
-    .col
-      h1 hello
-    .alert(class="alert-primary" role="alert")
+.header#main
+  .header-top
+    .container
+      .row
+        .col-md-8.align-items-center
+          .header-top--logo
+            img(src=require('../images/logo.jpg'), alt="", class='header--logo-image')
+            .header-top--logo-text 
+              h1 ПРАЙД
+              h2 Охранное предприятие
+        .col-md-4.d-flex.align-items-center.justify-content-end
+          .header-top--phone 8(977) 555-55-55
+  .header-menu
+    .container
+      .row
+        .col
+          ul
+            li
+              a(href="#main") Главная
+            li
+              a(href="#services") Услуги
+            li
+              a(href="#contacts") Контакты
+
+  #carousel(class="carousel slide", data-ride="carousel")
+    .carousel-inner
+      .carousel-item.active(style="background:url('./src/images/cameras.jpg') center / cover")
+      .carousel-item(style="background:url('./src/images/cameras.jpg') center / cover")
+      .carousel-item(style="background:url('./src/images/cameras.jpg') center / cover")
+    .controls-wrapper
+      .container.indicators
+        .row.indicators
+          ol.carousel-indicators
+            li(data-target="#carousel", data-slide-to="0", class="active") Охрана объектов
+            li(data-target="#carousel", data-slide-to="1") Личная охрана
+            li(data-target="#carousel", data-slide-to="2") Охрана строитльных объектов
+      .header-line
+        .container
+          .row
+            .col 
+              h2 Профессиональные охранные услуги  
